@@ -1,0 +1,29 @@
+{
+  "name": "a3-brandonyeu",
+  "description": "Assignment 3 - Persistence: Two-tier Web Application with Database, Express server, and CSS template ===",
+  "author": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mime": "^2.6.0",
+    "mongodb": "^6.20.0"
+  },
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonyeu/a3-brandonyeu.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brandonyeu/a3-brandonyeu/issues"
+  },
+  "homepage": "https://github.com/brandonyeu/a3-brandonyeu#readme"
+}
