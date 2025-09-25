@@ -1,6 +1,3 @@
-// FRONT-END (CLIENT) JAVASCRIPT HERE
-
-// Handle RSVP submission
 const submit = async function (event) {
   event.preventDefault();
 
@@ -33,7 +30,6 @@ const submit = async function (event) {
   }
 };
 
-// Navbar updater
 async function updateNavbar() {
   const navRight = document.querySelector("#nav-right");
   if (!navRight) return;
@@ -42,7 +38,7 @@ async function updateNavbar() {
     const res = await fetch("/session");
     const session = await res.json();
 
-    navRight.innerHTML = ""; // clear first
+    navRight.innerHTML = "";
 
     if (session.loggedIn) {
       navRight.innerHTML = `
@@ -67,7 +63,6 @@ async function updateNavbar() {
   }
 }
 
-// Handle login form (if on login page)
 async function handleLogin(event) {
   event.preventDefault();
   const username = document.querySelector("#username").value;
@@ -92,7 +87,6 @@ async function handleLogin(event) {
   }
 }
 
-// Initialize on page load
 window.onload = function () {
   const submitBtn = document.querySelector("form button");
   if (submitBtn) submitBtn.onclick = submit;

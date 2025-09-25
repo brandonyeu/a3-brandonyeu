@@ -7,11 +7,9 @@ body {
   min-height: 100vh;
   color: #F9E0D9;
   padding-top: 60px;
-  /* space for navbar */
   font-family: "Raleway", sans-serif;
 }
 
-/* Brand colors & overrides */
 :root {
   --color-primary: #7D6167;
   --color-primary-dark: #5C4950;
@@ -19,7 +17,6 @@ body {
   --color-accent: #754F5B;
 }
 
-/* Navbar background + dropdown */
 .navbar {
   background-color: var(--color-primary);
 }
@@ -56,34 +53,6 @@ body {
   color: var(--color-primary);
 }
 
-/* Modal (edit card) */
-/* 
-#editCard {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #5D4954;
-  color: #F9E0D9;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-  width: 350px;
-  z-index: 2000;
-}
-
-#editCard input {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--color-accent);
-  color: #F9E0D9;
-} */
-
-/* Success card */
 #successCard {
   background-color: var(--color-primary);
   color: var(--color-primary-light);
@@ -94,7 +63,6 @@ body {
   text-align: center;
   margin: 20px auto;
   display: none;
-  /* hidden until shown */
 }
 
 #successCard button {

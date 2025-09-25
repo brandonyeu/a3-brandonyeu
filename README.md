@@ -1,5 +1,10 @@
 Assignment 3 - Persistence: Two-tier Web Application with Database, Express server, and CSS template
 ===
+Brandon Yeu
+Deployed Link: https://a3-brandonyeu-production.up.railway.app/index.html
+Username: brandon1
+Password: brandon1
+OR Create your own account using Sign Up
 
 Check out the [CS 4241 Guides](https://github.com/jmcuneo/cs4241-guides) for help with the technologies discussed in this assignment.
 

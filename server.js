@@ -1,4 +1,4 @@
-require("dotenv").config(); // Load .env first
+require("dotenv").config();
 
 const bcrypt = require("bcrypt");
 const express = require("express");
@@ -10,19 +10,17 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Use environment variables for sensitive info
 const mongoUrl = process.env.MONGO_URL;
 const dbName = process.env.DB_NAME;
 const sessionSecret = process.env.SESSION_SECRET;
 
 if (!mongoUrl || !dbName || !sessionSecret) {
-  console.error("❌ Missing required environment variables. Check your .env file.");
+  console.error("Missing required environment variables from .env");
   process.exit(1);
 }
 
 let db, users, rsvps;
 
-// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -30,26 +28,24 @@ app.use(
     secret: sessionSecret,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }, // change to true if using HTTPS
+    cookie: { secure: false },
   })
 );
 app.use(express.static("public"));
 
-// Connect to MongoDB Atlas
 MongoClient.connect(mongoUrl)
   .then((client) => {
     db = client.db(dbName);
     users = db.collection("users");
     rsvps = db.collection("rsvps");
-    console.log("✅ Connected to MongoDB Atlas");
+    console.log("Connected to MongoDB Atlas");
 
     app.listen(port, () =>
-      console.log(`🚀 Server running on http://localhost:${port}`)
+      console.log("Server running on http://localhost:${port}")
     );
   })
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
-// -------- Authentication --------
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await users.findOne({ username });
@@ -93,7 +89,6 @@ function requireLogin(req, res, next) {
   next();
 }
 
-// -------- RSVPs --------
 app.get("/results", requireLogin, async (req, res) => {
   try {
     const username = req.session.user.username;
