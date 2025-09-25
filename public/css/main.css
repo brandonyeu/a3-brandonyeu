@@ -8,202 +8,56 @@ body {
   color: #F9E0D9;
   padding-top: 60px;
   /* space for navbar */
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-label,
-input,
-button,
-select,
-textarea,
-table {
   font-family: "Raleway", sans-serif;
 }
 
-/* ---------- NAVBAR ---------- */
+/* Brand colors & overrides */
+:root {
+  --color-primary: #7D6167;
+  --color-primary-dark: #5C4950;
+  --color-primary-light: #E6DBD0;
+  --color-accent: #754F5B;
+}
+
+/* Navbar background + dropdown */
 .navbar {
-  background-color: #7D6167;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-
-  display: flex;
-  /* make nav a flex container */
-  justify-content: space-between;
-  /* left items on left, right items on right */
-  align-items: center;
+  background-color: var(--color-primary);
 }
 
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar li {
-  display: inline;
-}
-
-.navbar a {
-  color: #F9E0D9;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #E6DBD0;
-}
-
-
-/* ---------- FORM CARD ---------- */
-.formCard {
-  width: 350px;
-  margin: 60px auto;
-  padding: 20px;
-  background: #5D495499;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-}
-
-.formCard form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.formCard input[type="text"],
-.formCard input[type="number"],
-.formCard input[type="email"] {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #754F5B;
-  color: #F9E0D9;
-}
-
-.formCard button {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #7D6167;
-  color: #F9E0D9;
+.profile-icon {
   cursor: pointer;
-  transition: all 0.2s ease;
+  font-size: 22px;
+  color: #F9E0D9;
 }
 
-.formCard button:hover {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-.formCard label {
-  text-align: left;
-}
-
-.formCard fieldset {
-  border: none;
-  padding: 0;
-  margin-top: 10px;
-  text-align: left;
-}
-
-.formCard fieldset legend {
-  font-weight: bold;
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.formCard fieldset label {
-  display: flex;
-  /* align circle and text horizontally */
-  align-items: left;
-  /* vertical centering of text with circle */
-  /*margin: 4px 0;*/
-  /* vertical spacing between options */
-  /*gap: -20px;*/
-  /* space between circle and text */
-
-}
-
-
-
-/* ---------- RESULTS TABLE ---------- */
-.resultsTable {
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  border-collapse: collapse;
-  background-color: #7D6167;
-  color: #E6DBD0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-}
-
-.resultsTable th,
-.resultsTable td {
-  border: 1px solid #E6DBD0;
-  padding: 10px;
-  text-align: left;
-}
-
-.resultsTable th {
-  background-color: #5C4950;
-}
-
-.resultsTable tr:nth-child(even) {
-  background-color: #6B4F56;
-}
-
-.resultsTable tr:hover {
-  background-color: #5C4950;
-}
-
-/* ---------- TABLE BUTTONS ---------- */
-.tableButton {
-  padding: 6px 12px;
-  border: none;
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--color-primary);
   border-radius: 5px;
+  margin-top: 8px;
+  min-width: 120px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px;
+  color: #F9E0D9;
+  text-align: left;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
 }
 
-.editButton {
-  background-color: #7D6167;
-  color: white;
+.dropdown button:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
-.editButton:hover {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-.deleteButton {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-.deleteButton:hover {
-  background-color: #7D6167;
-  color: white;
-}
-
-/* ---------- MODAL (editCard) ---------- */
+/* Modal (edit card) */
+/* 
 #editCard {
   position: fixed;
   top: 50%;
@@ -225,42 +79,14 @@ table {
   padding: 8px;
   border-radius: 5px;
   border: none;
-  background-color: #754F5B;
+  background-color: var(--color-accent);
   color: #F9E0D9;
-}
+} */
 
-#editCard button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#editCard .saveButton {
-  background-color: #7D6167;
-  color: #F9E0D9;
-}
-
-#editCard .saveButton:hover {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-#editCard .cancelButton {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-#editCard .cancelButton:hover {
-  background-color: #7D6167;
-  color: #E6DBD0;
-}
-
-/* ---------- SUCCESS CARD ---------- */
+/* Success card */
 #successCard {
-  background-color: #7D6167;
-  color: #E6DBD0;
+  background-color: var(--color-primary);
+  color: var(--color-primary-light);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -271,117 +97,18 @@ table {
   /* hidden until shown */
 }
 
-#successCard h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-#successCard p {
-  margin-bottom: 15px;
-}
-
 #successCard button {
   padding: 8px 16px;
   border-radius: 6px;
   border: none;
-  background-color: #E6DBD0;
-  color: #7D6167;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s ease;
 }
 
 #successCard button:hover {
-  background-color: #7D6167;
-  color: #E6DBD0;
-}
-
-h1 {
-  text-align: center;
-}
-
-/* Style both text and password inputs the same */
-input[type="text"],
-input[type="password"],
-input[type="submit"],
-button {
-  width: 100%;
-  /* padding: 10px; */
-  margin-top: 8px 0;
-  margin-bottom: 8px 0;
-  /* border-radius: 8px; */
-  border: none;
-  box-sizing: border-box;
-  font-size: 16px;
-  color: #F9E0D9;
-  /* same text color as username */
-  background-color: #754F5B;
-  /* same background as username */
-}
-
-/* For password fields: force masking dots to inherit text color */
-input[type="password"] {
-  -webkit-text-security: disc;
-  /* ensures dots are styled consistently */
-  color: #F9E0D9;
-  /* dots will match username text color */
-  width: 100%;
-  /* padding: 10px; */
-  margin-top: 8px 0;
-  margin-bottom: 8px 0;
-  /* border-radius: 8px; */
-  border: none;
-  box-sizing: border-box;
-  font-size: 16px;
-  /* same text color as username */
-  padding: 10px;
-  border-radius: 6px;
-  background-color: #754F5B;
-}
-
-.profile-icon {
-  cursor: pointer;
-  font-size: 22px;
-  color: #F9E0D9;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #7D6167;
-  border-radius: 5px;
-  margin-top: 8px;
-  min-width: 120px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.dropdown button {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 10px;
-  color: #F9E0D9;
-  text-align: left;
-  cursor: pointer;
-}
-
-.dropdown button:hover {
-  background-color: #E6DBD0;
-  color: #7D6167;
-}
-
-/* nice button style already used elsewhere */
-button.btn {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  background-color: #7D6167;
-  color: #F9E0D9;
-  cursor: pointer;
-}
-
-button.btn:hover {
-  background-color: #E6DBD0;
-  color: #7D6167;
+  background-color: var(--color-primary);
+  color: var(--color-primary-light);
 }

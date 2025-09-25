@@ -1,26 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Account</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
-  <!-- use the same navbar as other pages -->
-  <nav class="navbar">
-    <ul class="nav-left">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="results.html">Results</a></li>
+  <!-- Navbar (same across all pages) -->
+  <nav class="navbar fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-3">
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Home</a></li>
+      <li><a href="results.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Results</a></li>
     </ul>
-    <ul class="nav-right">
-      <li><a href="account.html">Account</a></li>
+    <ul>
+      <li><a href="account.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Account</a></li>
     </ul>
   </nav>
 
-  <div class="formCard" style="margin-top: 90px;">
-    <h1>Account</h1>
-    <div id="accountArea">
+  <!-- Account Card -->
+  <div class="formCard w-[350px] mx-auto mt-28 p-6 bg-[#5D495499] rounded-xl text-center shadow-lg">
+    <h1 class="text-2xl font-bold mb-4">Account</h1>
+    <div id="accountArea" class="text-[#F9E0D9]">
       <!-- JS will populate this -->
       <p>Checking session...</p>
     </div>
@@ -28,4 +32,5 @@
 
   <script src="js/account.js"></script>
 </body>
+
 </html>

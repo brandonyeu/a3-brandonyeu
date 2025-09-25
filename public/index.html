@@ -5,57 +5,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSVP Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-  <nav class="navbar">
-    <ul class="nav-left">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="results.html">Results</a></li>
+  <!-- Navbar -->
+  <nav class="navbar fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-3">
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Home</a></li>
+      <li><a href="results.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Results</a></li>
     </ul>
-
-    <!-- Account link always appears on the right -->
-    <ul class="nav-right">
-      <li><a href="account.html">Account</a></li>
+    <ul>
+      <li><a href="account.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Account</a></li>
     </ul>
   </nav>
-  <div class="formCard">
-    <h1>RSVP</h1>
-    <form id="rsvpForm">
-      <label for="yourname">Your Name</label>
-      <input type="text" id="yourname" name="yourname" placeholder="Enter your full name" required />
 
-      <fieldset>
-        <legend>Event</legend>
-        <label>
-          <input type="radio" name="event" value="Wedding" required />
-          Wedding
+  <!-- Form Card -->
+  <div class="formCard w-[350px] mx-auto mt-24 p-6 bg-[#5D495499] rounded-xl text-center shadow-lg">
+    <h1 class="text-2xl font-bold mb-4">RSVP</h1>
+    <form id="rsvpForm" class="flex flex-col gap-3">
+      <label for="yourname" class="text-left">Your Name</label>
+      <input type="text" id="yourname" name="yourname" placeholder="Enter your full name" required
+        class="p-3 rounded-md border-0 bg-[#754F5B] text-[#F9E0D9]" />
+
+      <fieldset class="mt-2 text-left">
+        <legend class="font-bold mb-2">Event</legend>
+        <label class="flex items-center gap-2 mb-1">
+          <input type="radio" name="event" value="Wedding" required /> Wedding
         </label>
-        <label>
+        <label class="flex items-center gap-2 mb-1">
           <input type="radio" name="event" value="Birthday Party" /> Birthday Party
         </label>
-        <label>
+        <label class="flex items-center gap-2">
           <input type="radio" name="event" value="Gala" /> Gala
         </label>
       </fieldset>
 
-      <label for="numAdditional">Additional Guests</label>
-      <input type="number" id="numAdditional" name="numAdditional" min="0" placeholder="0" />
+      <label for="numAdditional" class="text-left">Additional Guests</label>
+      <input type="number" id="numAdditional" name="numAdditional" min="0" placeholder="0"
+        class="p-3 rounded-md border-0 bg-[#754F5B] text-[#F9E0D9]" />
 
-      <label for="phoneNumber">Phone</label>
-      <input type="text" id="phoneNumber" name="phoneNumber" />
+      <label for="phoneNumber" class="text-left">Phone</label>
+      <input type="text" id="phoneNumber" name="phoneNumber"
+        class="p-3 rounded-md border-0 bg-[#754F5B] text-[#F9E0D9]" />
 
-      <label for="emailAddress">Email</label>
-      <input type="email" id="emailAddress" name="emailAddress" />
+      <label for="emailAddress" class="text-left">Email</label>
+      <input type="email" id="emailAddress" name="emailAddress"
+        class="p-3 rounded-md border-0 bg-[#754F5B] text-[#F9E0D9]" />
 
-      <button type="submit">Submit</button>
+      <button type="submit"
+        class="p-3 rounded-md bg-[#7D6167] text-[#F9E0D9] font-semibold hover:bg-[#E6DBD0] hover:text-[#7D6167] transition">
+        Submit
+      </button>
     </form>
   </div>
 
   <!-- Success confirmation card -->
   <div id="successCard">
-    <h2>Thank you!</h2>
+    <h2 class="text-xl font-bold">Thank you!</h2>
     <p>Your RSVP has been submitted successfully.</p>
     <button onclick="document.getElementById('successCard').style.display='none'">Close</button>
   </div>

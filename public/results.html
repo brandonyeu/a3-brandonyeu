@@ -1,63 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSVP Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/main.css" />
 </head>
-<body>
-  <nav class="navbar">
-    <ul class="nav-left">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="results.html">Results</a></li>
+
+<body class="bg-[#7D6167] min-h-screen text-[#F9E0D9]">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-3 bg-[#7D6167]">
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Home</a></li>
+      <li><a href="results.html" class="font-bold text-[#F9E0D9] hover:text-[#E6DBD0]">Results</a></li>
     </ul>
-    <ul class="nav-right" id="nav-right">
-      <!-- JS will populate this -->
+    <ul id="nav-right" class="flex gap-6">
+      <!-- Account link populated by JS -->
     </ul>
   </nav>
-  
-  
-  
-  
 
-  <h1>RSVP Results</h1>
-  <table class="resultsTable" id="resultsTable">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Event</th>
-        <th>Guests</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <!-- Page Title -->
+  <h1 class="text-3xl font-bold text-center mt-28 mb-6 text-[#F9E0D9]">RSVP Results</h1>
 
-  <!-- Edit Modal -->
-  <div id="editCard">
-    <h2>Edit RSVP</h2>
-    <label for="editName">Name</label>
-    <input type="text" id="editName" />
-
-    <label for="editEvent">Event</label>
-    <input type="text" id="editEvent" />
-
-    <label for="editNumAdditional">Additional Guests</label>
-    <input type="number" id="editNumAdditional" />
-
-    <label for="editPhone">Phone</label>
-    <input type="text" id="editPhone" />
-
-    <label for="editEmail">Email</label>
-    <input type="email" id="editEmail" />
-
-    <button class="saveButton">Save</button>
-    <button class="cancelButton">Cancel</button>
+  <!-- Results Table -->
+  <div class="overflow-x-auto max-w-5xl mx-auto">
+    <table id="resultsTable" class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-[#5C4950] text-[#E6DBD0]">
+          <th class="px-4 py-2 border border-[#E6DBD0]">Name</th>
+          <th class="px-4 py-2 border border-[#E6DBD0]">Event</th>
+          <th class="px-4 py-2 border border-[#E6DBD0]">Guests</th>
+          <th class="px-4 py-2 border border-[#E6DBD0]">Phone</th>
+          <th class="px-4 py-2 border border-[#E6DBD0]">Email</th>
+          <th class="px-4 py-2 border border-[#E6DBD0]">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </div>
+
+  <!-- Edit Modal Overlay -->
+  <!-- Overlay -->
+  <div id="editOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <!-- Card -->
+    <div id="editCard" class="flex flex-col bg-[#5D4954] text-[#F9E0D9] w-96 max-w-full p-6 rounded shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Edit RSVP</h2>
+
+      <label for="editName">Name</label>
+      <input id="editName" type="text" class="w-full p-2 rounded bg-[#754F5B] mb-2" />
+
+      <label for="editEvent">Event</label>
+      <input id="editEvent" type="text" class="w-full p-2 rounded bg-[#754F5B] mb-2" />
+
+      <label for="editNumAdditional">Total Guests</label>
+      <input id="editNumAdditional" type="number" class="w-full p-2 rounded bg-[#754F5B] mb-2" />
+
+      <label for="editPhone">Phone</label>
+      <input id="editPhone" type="text" class="w-full p-2 rounded bg-[#754F5B] mb-2" />
+
+      <label for="editEmail">Email</label>
+      <input id="editEmail" type="email" class="w-full p-2 rounded bg-[#754F5B] mb-4" />
+
+      <div class="flex justify-between gap-3">
+        <button id="saveEdit"
+          class="flex-1 bg-[#7D6167] hover:bg-[#E6DBD0] hover:text-[#7D6167] p-2 rounded">Save</button>
+        <button id="cancelEdit"
+          class="flex-1 bg-[#E6DBD0] hover:bg-[#7D6167] hover:text-[#E6DBD0] text-[#7D6167] p-2 rounded">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="js/results.js"></script>
 </body>
+
 </html>
