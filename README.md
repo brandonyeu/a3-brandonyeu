@@ -1,141 +1,73 @@
 Assignment 3 - Persistence: Two-tier Web Application with Database, Express server, and CSS template
 ===
+## RSVP App (Future Name: Night Owl) Brandon Yeu
 Brandon Yeu
 Deployed Link: https://a3-brandonyeu-production.up.railway.app/index.html
 Username: brandon1
 Password: brandon1
 OR Create your own account using Sign Up
 
-Check out the [CS 4241 Guides](https://github.com/jmcuneo/cs4241-guides) for help with the technologies discussed in this assignment.
+This app allows users to RSVP to ongoing events, and add themselves to a guestlist. Users can create an account and view their RSVPs. 
 
-This assignnment continues where we left off, extending it to use the most popular Node.js server framework (express), 
-a database (mongodb), and a CSS application framework / template of your choice (Boostrap, Material Design, Semantic UI, Pure etc.)
+One challenge that I faced were learning how MongoDBs work, I had understood them conceptually but had never used them in practice before. I also had some trouble increasing my score on the Google Lighthouse test, but I learned that some loading lags were caused by my Chrome extensions. 
 
-Baseline Requirements
----
+The authentication strategy that I chose was just username and password because it does not require users to have any accounts on any other platforms to be able to use my platform.
 
-Your application is required to implement the following functionalities:
+The CSS framework I chose was Tailwind because it is applicable to all components/elements and quick to create a product. However, there are parts of the CSS that made more sense to keep in main.css, so I used a combination of generic CSS and Tailwind.
 
-- (15 points) a `Server`, created using Express (no alternatives will be accepted for this assignment)
-- (10 points) a `Results` functionality which shows all data associated with a logged in user (except passwords)
-- (15 points) a `Form/Entry` functionality which allows users to add, modify, and delete data items (must be all three!) associated with their user name / account.
-- Persistent data storage in between server sessions using [mongodb](https://www.mongodb.com/cloud/atlas) (you *must* use mongodb for this assignment). You can use either the [official mongodb node.js library](https://www.npmjs.com/package/mongodb) or use the [Mongoose library](https://www.npmjs.com/package/mongoose), which enables you to define formal schemas for your database. Please be aware that the course staff cannot provide in-depth support for use of Mongoose.  (15 pts.)
-- (10 points) Use of a [CSS framework or template](https://github.com/troxler/awesome-css-frameworks). This should do the bulk of your styling/CSS for you and be appropriate to your application. For example, don't use [NES.css](https://nostalgic-css.github.io/NES.css/) (which is awesome!) unless you're creating a game or some type of retro 80s site.
-
-Your application is required to demonstrate the use of the following concepts:  
-
-HTML:  
-- (5 points) HTML input tags and form fields of various flavors (`<textarea>`, `<input>`, checkboxes, radio buttons, etc.)
-- HTML that can display all data *for a particular authenticated user*. Note that this is different from the last assignnment, which required the display of all data in memory on the server.
-
-Note that it might make sense to have two pages for this assignment, one that handles login / authentication and one that contains the rest of your application. For example, when visiting the home page for the assignment, users could be presented with a login form. After submitting the login form, if the login is successful, they are taken to the main application. If they fail, they are sent back to the login to try again. For this assignment, it is acceptable to simply create new user accounts upon login if none exist; however, you must alert your users to this fact.  
-
-CSS:  
-- CSS styling should primarily be provided by your chosen template/framework. Oftentimes a great deal of care has been put into designing CSS templates; don't override their stylesheets unless you are extremely confident in your graphic design capabilities. The idea is to use CSS templates that give you a professional-looking design aesthetic without requiring you to be a graphic designer yourself.
-
-JavaScript:  
-- At minimum, a small amount of front-end JavaScript to get / fetch data from the server. See the [previous assignment](https://github.com/jmcuneo/a2-shortstack-a25) for reference.
-
-Node.js:  
-- A server using Express and a persistent database (mongodb).
-
-General:  
-- (10 points) Your site should achieve at least 90% on the `Performance`, `Best Practices`, `Accessibility`, and `SEO` tests using Google [Lighthouse](https://developers.google.com/web/tools/lighthouse) (don't worry about the PWA test, and don't worry about scores for mobile devices). Test early and often so that fixing problems doesn't lead to suffering at the end of the assignment. 
-
-Deliverables
----
-
-Do the following to complete this assignment:
-
-1. Implement your project with the above requirements. I'd begin by converting your A2 assignment. First, change the server to use express. Then, modify the server to use mongodb instead of storing data locally. Last but not least, implement user accounts and login. User accounts and login is often the hardest part of this assignment, so budget your time accordingly.
-2. If you developed your project locally, deploy your project to Render (unless completing the alternative server technical acheivement described below), and fill in the appropriate fields in your package.json file.
-3. Test your project to make sure that when someone goes to your main page on Render (or an alternative server), it displays correctly.
-4. Ensure that your project has the proper naming scheme `a3-FirstnameLastname` so we can find it.
-5. Fork this repository and modify the README to the specifications below.
-6. Create and submit a Pull Request to the original repo. Name the pull request using the following template: `a3-FirstnameLastname`.
-
-Acheivements
----
-
-Below are suggested technical and design achievements. You can use these to help boost your grade up to an A and customize the assignment to your personal interests, for a maximum twenty additional points and a maximum grade of a 100%. These are recommended acheivements, but feel free to create/implement your own... just make sure you thoroughly describe what you did in your README, why it was challenging, and how many points you think the achievement should be worth. ALL ACHIEVEMENTS MUST BE DESCRIBED IN YOUR README IN ORDER TO GET CREDIT FOR THEM.
-
-*Technical*
-- (10 points) Implement OAuth authentication, perhaps with a library like [passport.js](http://www.passportjs.org/). *You must either use Github authenticaion or provide a username/password to access a dummy account*. Course staff cannot be expected, for example, to have a personal Facebook, Google, or Twitter account to use when grading this assignment. Please contact the course staff if you have any questions about this. THIS IS THE HARDEST ACHEIVEMENT OFFERED IN WEBWARE. You have been warned!  
-- (5 points) Instead of Render, host your site on a different service. Find a service that is reputable and has a free tier. Post your findings on Slack in the #assignment3 channel. DO NOT feel compelled to purchase a paid tier from any service, although if you already have one, you are welcome to use it. Make sure to describe this a bit in your README. What was better about using the service you chose as compared to Render? What (if anything) was worse? 
-- (5 points) Get 100% (not 98%, not 99%, but 100%) in all four lighthouse tests required for this assignment.  
-
-*Design/UX*
-- (10 points) Make your site accessible using the [resources and hints available from the W3C](https://www.w3.org/WAI/). Implement/follow twelve tips from their [tips for writing](https://www.w3.org/WAI/tips/writing/), [tips for designing](https://www.w3.org/WAI/tips/designing/), and [tips for development](https://www.w3.org/WAI/tips/developing/). *Note that all twelve must require active work on your part*. For example, even though your page will most likely not have a captcha, you don't get this as one of your twelve tips to follow because you're effectively 
-getting it "for free" without having to actively change anything about your site. Contact the course staff if you have any questions about what qualifies and doesn't qualify in this regard.
-List each tip that you followed and describe what you did to follow it in your site.
-- (5 points) Describe how your site uses the CRAP principles in the Non-Designer's Design Book readings. Which element received the most emphasis (contrast) on each page? How did you use proximity to organize the visual information on your page? What design elements (colors, fonts, layouts, etc.) did you use repeatedly throughout your site? How did you use alignment to organize information and/or increase contrast for particular elements. Write a paragraph of at least 125 words *for each of four principles* (four paragraphs, 500 words in total). 
-
-
-FAQ
----
-**Q: Am I required modify my A2 submission for this assignment?**
-
-No. If you want to start fresh for A3, you are welcome to do so. The option to start with A2 is simply there as a convenience for you.
-
-**Q: Which CSS framework should I use? How do I use it?**
-
-This is for you to figure out. While we do require Express and MongoDB for this assignment, we do not require a specific CSS framework, so we are not going to be discussing a specific one. You will be responsible for choosing a CSS framework and learning how to use it.
-
-**Q: How do I keep my .env file out of my git repo?**
-
-Create a .gitignore file on your local machine and list your .env file in it. Note that while your .env file should NOT appear in your repo, you will still want to [add it to your Render project](https://render.com/docs/configure-environment-variables) so that your website runs successfully.
-
-**Q: I'm confused about how user accounts work for this assignment.**
-
-For the base requirements (discounting the achievements), it should follow this logic:
-
-1. If the user logs in and the account does not exist, create the account and inform the user the account has been created.
-2. If the user logs in and the account exists but the password is incorrect, inform the user.
-3. If the user logs in, the account exists, and the password is correct, then take the user to the page that shows the data specific to the user.
-
-Note that implementing some of the technical achievements may override this requirement, which is fine.
-
-**Q: I'm getting a syntax error when trying to connect to MongoDB using the code in the tutorial.**
-
-Your version of Node may be outdated. Check out [this link](https://stackoverflow.com/questions/77749884/session-options-session-syntaxerror-unexpected-token-mongoose-give-a) for more information.
-
-**Q: Do I have to handle multiple user accounts?**
-
-No. You only need one dummy account UNLESS you are doing the GitHub login technical achievement. Make sure you mention in your README how the user should log in!
-
-**Q: If we use OAuth for logging in, do we still need the same pattern of behavior from the website when logging in (as described above)?**
-
-Yes, insofar as the logged in user should still be taken to a page with the user's data, the login should fail for the incorrect password, and a new account should be created if the username is unrecognized.
-
-Note that if you are doing OAuth, this last part might be difficult (especially if you are doing GitHub authentication). If that's the case, then the user should be taken to a page where they can create an account for your site.
-
-**Q: Does "HTML input tags and form fields of various flavors" mean that we need to use multiple different kinds of inputs, or does it mean that we just need to use some form of input?**
-
-You should have at least two different input types for this assignment. The purpose is to show your understanding beyond the simple `input` type you saw in A2.
-
-**Q: Am I allowed to use other libraries/frameworks/etc. in this assignment?**
-
-Yes, so long as those are IN ADDITION TO Express, MongoDB, and a CSS framework of your choice. Describe in your README any additional libraries or frameworks you used for this assignment. Also remember that the staff might not be familiar with these, so we may be unable to help you if you run into technical problems.
-
-
-Sample Readme (delete the above when you're ready to submit, and modify the below so with your links and descriptions)
----
-
-## Your Web Application Title
-
-Your Render (or alternative server) link e.g. http://a3-joshua-cuneo.render.me
-
-Include a very brief summary of your project here. Images are encouraged, along with concise, high-level text. Be sure to include:
-
-- the goal of the application
-- challenges you faced in realizing the application
-- what authentication strategy you chose to use and why (choosing one because it seemed the easiest to implement is perfectly acceptable)
-- what CSS framework you used and why
-  - include any modifications to the CSS framework you made via custom CSS you authored
-- a list of Express middleware packages you used and a short (one sentence) summary of what each one does. If you use a custom function, please add a little more detail about what it does.
+Middleware that I use:
+- body-parser: Processes incoming requests so the form inputs and JSON data can be accessed
+- express-session: Manages session state on the server, storing and retrieving session data like user status information so that the user remains authenticated across requests
+- express.static: Serves static files such as CSS, JavaScript, and images so that the client can load assets without defining routes for them
+- requireLogin: checks if req.session.user exists. If no user is logged in, it blocks the request with a 401 Unauthorized response. Otherwise, it allows the requests to continue. It ensures that only authenticated users can access /results, /submit, /edit, and /delete
 
 ## Technical Achievements
-- **Tech Achievement 1**: I used OAuth authentication via the GitHub strategy
+- **Tech Achievement 1**: I used username and password logic to create users, and store data based on users.
+- **Tech Achievement 2**: I deployed using Railway to host my frontend and backend
+- **Tech Achievement 3**: I used Tailwind CSS and generic CSS to style my pages
+- **Tech Achievement 4**: Received 100% on all 4 Google Lighthouse tests (Performance, Best Practices, Accessibility, and SEO)
+![Lighthouse test](public/images/lighthouse.png)
+- **Tech Achievement 5**: Server, created using Express
+- **Tech Achievement 6**: Persistent data storage in between server sessions using mongodb Atlas
+- **Tech Achievement 7**: Results functionality which shows all of the form submissions from the currently logged in user
+- **Tech Achievement 8**: Form functionality to add data
+- **Tech Achievement 9**: Form validation and input handling
+- **Tech Achievement 10**: Functionality to edit or delete rows of data
+- **Tech Achievement 11**: User authentication (login/logout)
+- **Tech Achievement 12**: Error handling and feedback
+- **Tech Achievement 13**: Use of environment variables to protect sensitive app information
+- **Tech Achievement 14**: Send cards for user information
+- **Tech Achievement 15**: Server function requires login and checks that the client is an authenticated user before allowing access
+
 
 ### Design/Evaluation Achievements
 - **Design Achievement 1**: I followed the following tips from the W3C Web Accessibility Initiative...
+- 1. I provided informative, unique page titles to inform users of what their current page is and it's function. This is still visible from other tabs.
+- 2. I used clear and simple language with my form labels ("Your Name," "Event," "Additional Guests," i.e.) and on the form button "Submit" as opposed to something like "Go"
+- 3. I used headings to express meaning and create structure (h1, h2, etc.)
+- 4. I provided instructions in the form by including placeholders and input labels so that users know what to put
+- 5. I ensured sufficient color contrast by changing colors in my nav bar and buttons
+- 6. I used color with care by not solely relying on color to represent states. Hovering in the nav bar changes the text
+- 7. I made interactive elements highly identifiable by making buttons have high contrast colors with the background and hover effects
+- 8. I used a clear and consistent layout by keeping the nav bar consistent across all pages 
+- 9. I associated labels with the form inputs so that users read the label when focusing on the input
+- 10. I provided clear focus indication by including the focus ring so that users can see which input field is active
+- 11. I used headings and landmarks so that users can quickly jump between sections
+- 12. I made sure form elements have required attributes to help preserve the data and validate submissions
+
+- **Design Achievement 2**: Color palette used across pages for consistency and visual appeal
+![Color Palette](public/images/ColorPalette.png)
+- **Design Achievement 3**: Color palette matches background image for visual appeal
+- **Design Achievement 4**: Responsive layout through Tailwind responsive utility to adapt to desktop or mobile devices
+- **Design Achievement 5**: Consistent theming of element designs (rounded corners, certain semi-transparent elements)
+- **Design Achievement 6**: Intuitive navigation layout with nav bar for users to easily move around pages
+- **Design Achievement 7**: Form usability and clarity with organized form fields, labels, spacing, and grouping
+- **Design Achievement 8**: Hover and focus interactions to help the user focus on specific items
+- **Design Achievement 9**: Results page designed to be easy to read and interpret
+- **Design Achievement 10**: Actions on Results page clearly identified and understood
+- **Design Achievement 11**: Send cards for user notifications to draw their attention to them
+- **Design Achievement 12**: How my Site uses the CRAP principles:
+- 1. **Contrast**: Contrast plays a significant role in my site's design, since it helps guide the user's eyes to the most important elements and makes the interface more accessible. The elements that receive the most emphasis are the page titles and the main action buttons. For example, on the RSVP form, the "Submit" button contrasts strongly against the darker background of the form card, ensuring that users immediately know how to complete the form. Likewise, the navigation bar text uses a light color against a darker background, making the links easy to read while emphasizing the primary site structure. I also applied hover states to both links and buttons tofurther enhance contrast during interaction. This use of color and emphasis ensures that important actions and sections stand out visually, guiding users smoothly through each page.
+- 2. **Repetition**: Repetition helps build consistency and familiarity across the different pages of my site. I repeated the same color palette, typography, and rounded card layouts throughout the Home, Results, and Account pages, which unifies the design and makes the site feel cohesive. For instance, the form card on the RSVP pages uses the same rounded edges, background transparency, and shadowing that appear in other content cards. Similarly, the navigation bar is repeated in the same style and placement across all pages, so users do not need to relearn navigation cues. Repeated hover effects for links and buttons also give the site a consistent interactive feel. This repetition reduces cognitive load for the user because once they learn how to interpret or interact with one element, they can easily apply that understanding elsewhere.
+- 3. **Alignment**: Alignment was essential to making the site feel organized and professional. I aligned form labels to the left, which improves readability and ensures that users can quickly scan down the fields. Input boxes are also consistently aligned under their corresponding labels, creating a clean vertical flow through the RSVP form. The navigation bar aligns its elements horizontally in two distinct groups, page links on the left and account link on the right, which help establish hierarchy. On the results page, RSVP entries are organized in aligned rows and columns, which increases clarity and reduces visual clutter. By maintaining consistent alignment, I not only improved the overall organization of the site but also created subtle contrast between grouped content and the surrounding whitespace, further highlighting important areas.
+- 4. **Proximity**: Proximity was used to organize visual information and make relationships between elements more obvious. For example, within the RSVP form, I grouped related inputs together. The radio buttons for event selection are placed closely under the "Event" label, making it clear they belong to the same choice set. Similarly, each form label is positioned near its input box, so users immediately understand the connection. On the results page, RSVP entries are separated with spacing and card-like containers, which group information for each guest while preventing confusion between different submissions. Even in the navigation bar, spacing between "Home," "Results," and "Account" establishes that they are separate navigational links, while their shared proximity within the bar shows that they belong to the same functional category. This thoughtful grouping makes the interface easier to scan and understand quickly. 
