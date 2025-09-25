@@ -7,6 +7,8 @@ Username: brandon1
 Password: brandon1
 OR Create your own account using Sign Up
 
+![Main page](public/images/screenshot.png)
+
 This app allows users to RSVP to ongoing events, and add themselves to a guestlist. Users can create an account and view their RSVPs. 
 
 One challenge that I faced were learning how MongoDBs work, I had understood them conceptually but had never used them in practice before. I also had some trouble increasing my score on the Google Lighthouse test, but I learned that some loading lags were caused by my Chrome extensions. 
